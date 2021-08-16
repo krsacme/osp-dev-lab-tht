@@ -13,7 +13,7 @@ parameter_defaults:
   #NeutronNetworkType: ['vxlan', 'vlan']
 
   ComputeSriovCount: 2
-  NeutronNetworkVLANRanges: dpdk1:514:514,dpdk2:516:516,sriov1:514:516,sriov2:514:516
+  NeutronNetworkVLANRanges: dpdk1:514:514,dpdk2:516:516,sriov1:514:514,sriov2:516:516
 
   NeutronBridgeMappings: 'datacentre:br-ex,sriov1:br-link1,sriov2:br-link2'
   NeutronFlatNetworks: 'datacentre,sriov1,sriov2'
