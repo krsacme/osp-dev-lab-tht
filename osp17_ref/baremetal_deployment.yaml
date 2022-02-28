@@ -1,0 +1,35 @@
+- name: Controller
+  count: 3
+  hostname_format: controller-%index%
+  defaults:
+    profile: control
+    networks:
+      - network: external
+        subnet: external_subnet
+      - network: internal_api
+        subnet: internal_api_subnet
+      - network: storage
+        subnet: storage_subnet
+      - network: storage_mgmt
+        subnet: storage_mgmt_subnet
+      - network: tenant
+        subnet: tenant_subnet
+    network_config:
+      template: /home/stack/osp17_ref/nic-configs/controller.yaml
+      default_route_network:
+        - external
+
+- name: ComputeOvsDpdkSriov
+  count: 2
+  hostname_format: computeovsdpdksriov-%index%
+  defaults:
+    profile: compute
+    networks:
+      - network: internal_api
+        subnet: internal_api_subnet
+      - network: tenant
+        subnet: tenant_subnet
+      - network: storage
+        subnet: storage_subnet
+    network_config:
+      template: /home/stack/osp17_ref/nic-configs/computeovsdpdksriov.yaml

@@ -3,6 +3,6 @@
 # other entries can be moved to individual network-envirment-<feature> file in future
 parameter_defaults:
   NeutronBridgeMappings: 'datacentre:br-ex,sriov1:br-tenant,dpdk2:br-link2,dpdk1:br-link1'
-  NeutronNetworkVLANRanges: dpdk1:514:514,dpdk2:516:516,sriov1:514:516,sriov2:514:516
+  NeutronNetworkVLANRanges: dpdk1:5:10,dpdk2:5:10,sriov1:5:10,sriov2:5:10
   NeutronFlatNetworks: 'datacentre,dpdk1,dpdk2,sriov1,sriov2'
 
