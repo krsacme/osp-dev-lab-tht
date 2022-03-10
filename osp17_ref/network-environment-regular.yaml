@@ -1,9 +1,12 @@
 resource_registry:
-  OS::TripleO::ComputeOvsDpdkSriov::Net::SoftwareConfig: nic-configs/computeovsdpdksriov.yaml
-  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
-  OS::TripleO::ControllerSriov::Net::SoftwareConfig: nic-configs/controller.yaml
+  OS::TripleO::ComputeOvsDpdkSriov::Net::SoftwareConfig: nic-configs/computeovsdpdksriov.j2
+  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.j2
+  OS::TripleO::ControllerSriov::Net::SoftwareConfig: nic-configs/controller.j2
 
 parameter_defaults:
+  ControllerNetworkConfigTemplate: nic-configs/controller.j2
+  ControllerSriovNetworkConfigTemplate: nic-configs/controller.j2
+  ComputeOvsDpdkSriovNetworkConfigTemplate: nic-configs/computeovsdpdksriov.j2
   NeutronTunnelTypes: 'geneve'
   NeutronNetworkType: ['geneve', 'vlan']
   NeutronEnableDVR: false

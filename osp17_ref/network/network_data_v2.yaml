@@ -1,0 +1,71 @@
+- name: Storage
+  name_lower: storage
+  vip: true
+  mtu: 1500
+  subnets:
+    storage_subnet:
+      vlan: 1
+      ip_subnet: 152.20.16.0/24
+      gateway_ip: 152.20.16.1
+      routes:
+      - destination: 152.20.16.0/20
+        nexthop: 152.20.16.1
+      allocation_pools:
+      - start: 152.20.16.4
+        end: 152.20.16.250
+- name: StorageMgmt
+  name_lower: storage_mgmt
+  vip: true
+  mtu: 1500
+  subnets:
+    storage_mgmt_subnet:
+      vlan: 2
+      ip_subnet: 152.20.48.0/24
+      gateway_ip: 152.20.48.1
+      routes:
+      - destination: 152.20.48.0/20
+        nexthop: 152.20.48.1
+      allocation_pools:
+      - start: 152.20.48.4
+        end: 152.20.48.250
+- name: InternalApi
+  name_lower: internal_api
+  vip: true
+  mtu: 1500
+  subnets:
+    internal_api_subnet:
+      vlan: 3
+      ip_subnet: 152.20.32.0/24
+      gateway_ip: 152.20.32.1
+      routes:
+      - destination: 152.20.32.0/20
+        nexthop: 152.20.32.1
+      allocation_pools:
+      - start: 152.20.32.4
+        end: 152.20.32.250
+- name: Tenant
+  name_lower: tenant
+  vip: false
+  mtu: 1500
+  subnets:
+    tenant_subnet:
+      vlan: 4
+      ip_subnet: 152.20.0.0/24
+      gateway_ip: 152.20.0.1
+      routes:
+      - destination: 152.20.0.0/20
+        nexthop: 152.20.0.1
+      allocation_pools:
+      - start: 152.20.0.4
+        end: 152.20.0.250
+- name: External
+  name_lower: external
+  vip: true
+  mtu: 1500
+  subnets:
+    external_subnet:
+      ip_subnet: 172.51.0.0/24
+      allocation_pools:
+      - start: 172.51.0.201
+        end: 172.51.0.206
+      gateway_ip: 172.51.0.1

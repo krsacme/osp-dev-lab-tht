@@ -1,0 +1,11 @@
+# NOTE: dns_name: maybe redhat.local needs to be used here too
+- network: ctlplane
+  dns_name: redhat.local
+- network: external
+  dns_name: redhat.local
+- network: internal_api
+  dns_name: redhat.local
+- network: storage
+  dns_name: redhat.local
+- network: storage_mgmt
+  dns_name: redhat.local

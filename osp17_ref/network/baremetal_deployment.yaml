@@ -15,7 +15,7 @@
       - network: tenant
         subnet: tenant_subnet
     network_config:
-      template: /home/stack/osp17_ref/nic-configs/controller.yaml
+      template: /home/stack/osp17_ref/nic-configs/controller.j2
       default_route_network:
         - external
 
@@ -32,4 +32,4 @@
       - network: storage
         subnet: storage_subnet
     network_config:
-      template: /home/stack/osp17_ref/nic-configs/computeovsdpdksriov.yaml
+      template: /home/stack/osp17_ref/nic-configs/computeovsdpdksriov.j2
